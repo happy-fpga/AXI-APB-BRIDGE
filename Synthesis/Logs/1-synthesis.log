@@ -1,0 +1,1148 @@
+
+ /----------------------------------------------------------------------------\
+ |                                                                            |
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |                                                                            |
+ |  Copyright (C) 2012 - 2020  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |                                                                            |
+ |  Permission to use, copy, modify, and/or distribute this software for any  |
+ |  purpose with or without fee is hereby granted, provided that the above    |
+ |  copyright notice and this permission notice appear in all copies.         |
+ |                                                                            |
+ |  THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES  |
+ |  WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF          |
+ |  MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR   |
+ |  ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES    |
+ |  WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN     |
+ |  ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF   |
+ |  OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.            |
+ |                                                                            |
+ \----------------------------------------------------------------------------/
+
+ Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+
+[TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `eval' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `exec' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `read' -> skip.
+[TCL: yosys -import] Command name collision: found pre-existing command `trace' -> skip.
+
+1. Executing Liberty frontend: /home/running_courses/EE671/EE671_3/.volare/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+2. Executing Verilog-2005 frontend: /openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v
+Parsing SystemVerilog input from `/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v' to AST representation.
+Storing AST representation for module `$abstract\axi_apb_bridge'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+4. Executing AST frontend in derive mode using pre-parsed AST for module `\axi_apb_bridge'.
+Generating RTLIL representation for module `\axi_apb_bridge'.
+
+4.1. Analyzing design hierarchy..
+Top module:  \axi_apb_bridge
+
+4.2. Analyzing design hierarchy..
+Top module:  \axi_apb_bridge
+Removing unused module `$abstract\axi_apb_bridge'.
+Removed 1 unused modules.
+
+5. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/axi_apb_bridge/runs/full_guide/tmp/synthesis/hierarchy.dot'.
+Dumping module axi_apb_bridge to page 1.
+Renaming module axi_apb_bridge to axi_apb_bridge.
+
+6. Executing TRIBUF pass.
+
+7. Executing HIERARCHY pass (managing design hierarchy).
+
+7.1. Analyzing design hierarchy..
+Top module:  \axi_apb_bridge
+
+7.2. Analyzing design hierarchy..
+Top module:  \axi_apb_bridge
+Removed 0 unused modules.
+
+8. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+9. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4 in module axi_apb_bridge.
+Marked 8 switch rules as full_case in process $proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:79$3 in module axi_apb_bridge.
+Marked 1 switch rules as full_case in process $proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:70$1 in module axi_apb_bridge.
+Removed a total of 0 dead cases.
+
+10. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 7 redundant assignments.
+Promoted 1 assignment to connection.
+
+11. Executing PROC_INIT pass (extract init attributes).
+
+12. Executing PROC_ARST pass (detect async resets in processes).
+Found async reset \axi_aresetn in `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+Found async reset \axi_aresetn in `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:70$1'.
+
+13. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~16 debug messages>
+
+14. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+     1/17: $0\clk_enable[0:0]
+     2/17: $0\apb_penable[0:0]
+     3/17: $0\apb_psel[0:0]
+     4/17: $0\axi_arready[0:0]
+     5/17: $0\axi_wready[0:0]
+     6/17: $0\axi_awready[0:0]
+     7/17: $0\captured_wstrb[3:0]
+     8/17: $0\captured_wdata[31:0]
+     9/17: $0\captured_addr[31:0]
+    10/17: $0\apb_pwdata[31:0]
+    11/17: $0\apb_pwrite[0:0]
+    12/17: $0\apb_paddr[31:0]
+    13/17: $0\axi_rvalid[0:0]
+    14/17: $0\axi_rresp[1:0]
+    15/17: $0\axi_rdata[31:0]
+    16/17: $0\axi_bvalid[0:0]
+    17/17: $0\axi_bresp[1:0]
+Creating decoders for process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:79$3'.
+     1/8: $8\next_state[2:0]
+     2/8: $7\next_state[2:0]
+     3/8: $6\next_state[2:0]
+     4/8: $5\next_state[2:0]
+     5/8: $4\next_state[2:0]
+     6/8: $3\next_state[2:0]
+     7/8: $2\next_state[2:0]
+     8/8: $1\next_state[2:0]
+Creating decoders for process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:70$1'.
+     1/1: $0\current_state[2:0]
+
+15. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\axi_apb_bridge.\next_state' from process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:79$3'.
+
+16. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `\axi_apb_bridge.\axi_awready' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$197' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\axi_wready' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$198' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\axi_bresp' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $dff cell `$procdff$201' with positive edge clock.
+Creating register for signal `\axi_apb_bridge.\axi_bvalid' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$202' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\axi_arready' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$203' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\axi_rdata' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $dff cell `$procdff$206' with positive edge clock.
+Creating register for signal `\axi_apb_bridge.\axi_rresp' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $dff cell `$procdff$209' with positive edge clock.
+Creating register for signal `\axi_apb_bridge.\axi_rvalid' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$210' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\apb_paddr' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$211' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\apb_pwrite' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$212' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\apb_psel' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$213' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\apb_penable' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$214' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\apb_pwdata' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$215' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\captured_addr' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$216' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\captured_wdata' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$217' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\captured_wstrb' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$218' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\clk_enable' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+  created $adff cell `$procdff$219' with positive edge clock and negative level reset.
+Creating register for signal `\axi_apb_bridge.\current_state' using process `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:70$1'.
+  created $adff cell `$procdff$220' with positive edge clock and negative level reset.
+
+17. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+18. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Found and cleaned up 8 empty switches in `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+Removing empty process `axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:106$4'.
+Found and cleaned up 8 empty switches in `\axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:79$3'.
+Removing empty process `axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:79$3'.
+Removing empty process `axi_apb_bridge.$proc$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:70$1'.
+Cleaned up 16 empty switches.
+
+19. Executing CHECK pass (checking for obvious problems).
+Checking module axi_apb_bridge...
+Found and reported 0 problems.
+
+20. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+<suppressed ~6 debug messages>
+
+21. Executing FLATTEN pass (flatten design).
+
+22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+23. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 7 unused cells and 60 unused wires.
+<suppressed ~10 debug messages>
+
+24. Executing OPT pass (performing simple optimizations).
+
+24.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+24.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+<suppressed ~84 debug messages>
+Removed a total of 28 cells.
+
+24.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+    dead port 2/2 on $mux $procmux$128.
+    dead port 2/2 on $mux $procmux$135.
+    dead port 2/2 on $mux $procmux$143.
+    dead port 2/2 on $mux $procmux$152.
+    dead port 2/2 on $mux $procmux$162.
+    dead port 1/2 on $mux $procmux$174.
+    dead port 2/2 on $mux $procmux$176.
+    dead port 2/2 on $mux $procmux$187.
+Removed 8 multiplexer ports.
+<suppressed ~16 debug messages>
+
+24.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+    New ctrl vector for $pmux cell $procmux$17: $auto$opt_reduce.cc:134:opt_pmux$222
+    New ctrl vector for $pmux cell $procmux$88: $auto$opt_reduce.cc:134:opt_pmux$224
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 2 changes.
+
+24.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+<suppressed ~9 debug messages>
+Removed a total of 3 cells.
+
+24.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 39 unused wires.
+<suppressed ~1 debug messages>
+
+24.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+24.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+24.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+24.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+    New ctrl vector for $pmux cell $procmux$11: $auto$opt_reduce.cc:134:opt_pmux$226
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 1 changes.
+
+24.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+<suppressed ~3 debug messages>
+Removed a total of 1 cells.
+
+24.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+24.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+24.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+24.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+24.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+24.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+24.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+24.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+24.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+24.23. Finished OPT passes. (There is nothing left to do.)
+
+25. Executing FSM pass (extract and optimize FSM).
+
+25.1. Executing FSM_DETECT pass (finding FSMs in design).
+Not marking axi_apb_bridge.axi_bresp as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Not marking axi_apb_bridge.axi_rresp as FSM state register:
+    Register is connected to module port.
+    Users of register don't seem to benefit from recoding.
+Not marking axi_apb_bridge.current_state as FSM state register:
+    Circuit seems to be self-resetting.
+
+25.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+25.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+25.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+25.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+25.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+25.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+25.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+26. Executing OPT pass (performing simple optimizations).
+
+26.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+26.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+26.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~17 debug messages>
+
+26.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+26.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+26.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding EN signal on $procdff$220 ($adff) from module axi_apb_bridge (D = \next_state, Q = \current_state).
+Adding EN signal on $procdff$217 ($adff) from module axi_apb_bridge (D = \axi_wdata, Q = \captured_wdata).
+Adding EN signal on $procdff$216 ($adff) from module axi_apb_bridge (D = $procmux$74_Y, Q = \captured_addr).
+Adding EN signal on $procdff$215 ($adff) from module axi_apb_bridge (D = \captured_wdata, Q = \apb_pwdata).
+Adding EN signal on $procdff$212 ($adff) from module axi_apb_bridge (D = $0\apb_pwrite[0:0], Q = \apb_pwrite).
+Adding EN signal on $procdff$211 ($adff) from module axi_apb_bridge (D = \captured_addr, Q = \apb_paddr).
+Adding EN signal on $procdff$210 ($adff) from module axi_apb_bridge (D = $0\axi_rvalid[0:0], Q = \axi_rvalid).
+Adding EN signal on $procdff$209 ($dff) from module axi_apb_bridge (D = $ternary$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:156$6_Y, Q = \axi_rresp).
+Adding EN signal on $procdff$206 ($dff) from module axi_apb_bridge (D = \apb_prdata, Q = \axi_rdata).
+Adding EN signal on $procdff$202 ($adff) from module axi_apb_bridge (D = $0\axi_bvalid[0:0], Q = \axi_bvalid).
+Adding EN signal on $procdff$201 ($dff) from module axi_apb_bridge (D = $ternary$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:156$6_Y, Q = \axi_bresp).
+
+26.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 14 unused cells and 14 unused wires.
+<suppressed ~15 debug messages>
+
+26.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+<suppressed ~4 debug messages>
+
+26.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+26.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~11 debug messages>
+
+26.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+26.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+<suppressed ~18 debug messages>
+Removed a total of 6 cells.
+
+26.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~1 debug messages>
+
+26.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+26.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+26.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+26.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+26.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+26.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+26.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+26.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+26.23. Finished OPT passes. (There is nothing left to do.)
+
+27. Executing WREDUCE pass (reducing word size of cells).
+Removed top 1 bits (of 3) from port B of cell axi_apb_bridge.$procmux$113_CMP0 ($eq).
+Removed top 1 bits (of 3) from port B of cell axi_apb_bridge.$procmux$116_CMP0 ($eq).
+Removed top 2 bits (of 3) from port B of cell axi_apb_bridge.$procmux$163_CMP0 ($eq).
+
+28. Executing PEEPOPT pass (run peephole optimizers).
+
+29. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+30. Executing ALUMACC pass (create $alu and $macc cells).
+Extracting $alu and $macc cells in module axi_apb_bridge:
+  created 0 $alu and 0 $macc cells.
+
+31. Executing SHARE pass (SAT-based resource sharing).
+
+32. Executing OPT pass (performing simple optimizations).
+
+32.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+32.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+32.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~12 debug messages>
+
+32.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+32.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+32.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+32.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+32.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+32.9. Finished OPT passes. (There is nothing left to do.)
+
+33. Executing MEMORY pass.
+
+33.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+33.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+33.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+33.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+33.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+33.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+33.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+33.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+33.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+33.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+34. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+35. Executing OPT pass (performing simple optimizations).
+
+35.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+<suppressed ~23 debug messages>
+
+35.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+35.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+35.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 15 unused wires.
+<suppressed ~1 debug messages>
+
+35.5. Finished fast OPT passes.
+
+36. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+37. Executing OPT pass (performing simple optimizations).
+
+37.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+<suppressed ~2 debug messages>
+
+37.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+37.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~4 debug messages>
+
+37.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+    Consolidated identical input bits for $mux cell $procmux$185:
+      Old ports: A=3'100, B=3'001, Y=$2\next_state[2:0]
+      New ports: A=2'10, B=2'01, Y={ $2\next_state[2:0] [2] $2\next_state[2:0] [0] }
+      New connections: $2\next_state[2:0] [1] = 1'0
+    New ctrl vector for $pmux cell $procmux$190: { $procmux$177_CMP $procmux$163_CMP $procmux$116_CMP $procmux$102_CMP }
+    Consolidated identical input bits for $mux cell $ternary$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:156$6:
+      Old ports: A=2'00, B=2'10, Y=$ternary$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:156$6_Y
+      New ports: A=1'0, B=1'1, Y=$ternary$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:156$6_Y [1]
+      New connections: $ternary$/openlane/designs/axi_apb_bridge/src/axi_apb_bridge.v:156$6_Y [0] = 1'0
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 3 changes.
+
+37.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+37.6. Executing OPT_SHARE pass.
+
+37.7. Executing OPT_DFF pass (perform DFF optimizations).
+
+37.8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+37.9. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+<suppressed ~1 debug messages>
+
+37.10. Rerunning OPT passes. (Maybe there is more to do..)
+
+37.11. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+37.12. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+37.13. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+37.14. Executing OPT_SHARE pass.
+
+37.15. Executing OPT_DFF pass (perform DFF optimizations).
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$264 ($dffe) from module axi_apb_bridge.
+Setting constant 0-bit at position 0 on $auto$ff.cc:266:slice$279 ($dffe) from module axi_apb_bridge.
+
+37.16. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 1 unused wires.
+<suppressed ~1 debug messages>
+
+37.17. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+37.18. Rerunning OPT passes. (Maybe there is more to do..)
+
+37.19. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+37.20. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+37.21. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+37.22. Executing OPT_SHARE pass.
+
+37.23. Executing OPT_DFF pass (perform DFF optimizations).
+
+37.24. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+37.25. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+37.26. Finished OPT passes. (There is nothing left to do.)
+
+38. Executing TECHMAP pass (map to technology primitives).
+
+38.1. Executing Verilog-2005 frontend: /nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v
+Parsing Verilog input from `/nix/store/sx2v0i73mn1ih2z1nk61pm9n5gjgpidy-yosys/bin/../share/yosys/techmap.v' to AST representation.
+Generating RTLIL representation for module `\_90_simplemap_bool_ops'.
+Generating RTLIL representation for module `\_90_simplemap_reduce_ops'.
+Generating RTLIL representation for module `\_90_simplemap_logic_ops'.
+Generating RTLIL representation for module `\_90_simplemap_compare_ops'.
+Generating RTLIL representation for module `\_90_simplemap_various'.
+Generating RTLIL representation for module `\_90_simplemap_registers'.
+Generating RTLIL representation for module `\_90_shift_ops_shr_shl_sshl_sshr'.
+Generating RTLIL representation for module `\_90_shift_shiftx'.
+Generating RTLIL representation for module `\_90_fa'.
+Generating RTLIL representation for module `\_90_lcu'.
+Generating RTLIL representation for module `\_90_alu'.
+Generating RTLIL representation for module `\_90_macc'.
+Generating RTLIL representation for module `\_90_alumacc'.
+Generating RTLIL representation for module `\$__div_mod_u'.
+Generating RTLIL representation for module `\$__div_mod_trunc'.
+Generating RTLIL representation for module `\_90_div'.
+Generating RTLIL representation for module `\_90_mod'.
+Generating RTLIL representation for module `\$__div_mod_floor'.
+Generating RTLIL representation for module `\_90_divfloor'.
+Generating RTLIL representation for module `\_90_modfloor'.
+Generating RTLIL representation for module `\_90_pow'.
+Generating RTLIL representation for module `\_90_pmux'.
+Generating RTLIL representation for module `\_90_demux'.
+Generating RTLIL representation for module `\_90_lut'.
+Successfully finished Verilog frontend.
+
+38.2. Continuing TECHMAP pass.
+Using extmapper simplemap for cells of type $dffe.
+Using extmapper simplemap for cells of type $reduce_bool.
+Using extmapper simplemap for cells of type $ne.
+Using extmapper simplemap for cells of type $and.
+Using extmapper simplemap for cells of type $mux.
+Using extmapper simplemap for cells of type $reduce_and.
+Using extmapper simplemap for cells of type $not.
+Using extmapper simplemap for cells of type $eq.
+Using extmapper simplemap for cells of type $adffe.
+Using extmapper simplemap for cells of type $reduce_or.
+Using extmapper simplemap for cells of type $logic_not.
+Using template $paramod$d31bf4d7d72e59528d18fbd4f322e9d608532043\_90_pmux for cells of type $pmux.
+Using extmapper simplemap for cells of type $adff.
+No more expansions possible.
+<suppressed ~146 debug messages>
+
+39. Executing OPT pass (performing simple optimizations).
+
+39.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+<suppressed ~85 debug messages>
+
+39.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+<suppressed ~39 debug messages>
+Removed a total of 13 cells.
+
+39.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+39.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 79 unused wires.
+<suppressed ~1 debug messages>
+
+39.5. Finished fast OPT passes.
+
+40. Executing ABC pass (technology mapping using ABC).
+
+40.1. Extracting gate netlist of module `\axi_apb_bridge' to `<abc-temp-dir>/input.blif'..
+Extracted 89 gates and 164 wires to a netlist network with 74 inputs and 50 outputs.
+
+40.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f <abc-temp-dir>/abc.script 2>&1
+ABC: ABC command line: "source <abc-temp-dir>/abc.script".
+ABC: 
+ABC: + read_blif <abc-temp-dir>/input.blif 
+ABC: + read_library <abc-temp-dir>/stdcells.genlib 
+ABC: Entered genlib library with 13 gates from file "<abc-temp-dir>/stdcells.genlib".
+ABC: + strash 
+ABC: + dretime 
+ABC: + map 
+ABC: + write_blif <abc-temp-dir>/output.blif 
+
+40.1.2. Re-integrating ABC results.
+ABC RESULTS:               NOT cells:        4
+ABC RESULTS:              NAND cells:        2
+ABC RESULTS:               MUX cells:       34
+ABC RESULTS:                OR cells:       12
+ABC RESULTS:               AND cells:        3
+ABC RESULTS:            ANDNOT cells:       21
+ABC RESULTS:             ORNOT cells:        3
+ABC RESULTS:               NOR cells:        3
+ABC RESULTS:        internal signals:       40
+ABC RESULTS:           input signals:       74
+ABC RESULTS:          output signals:       50
+Removing temp directory.
+
+41. Executing OPT pass (performing simple optimizations).
+
+41.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+41.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+41.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+41.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 0 unused cells and 124 unused wires.
+<suppressed ~1 debug messages>
+
+41.5. Finished fast OPT passes.
+
+42. Executing HIERARCHY pass (managing design hierarchy).
+
+42.1. Analyzing design hierarchy..
+Top module:  \axi_apb_bridge
+
+42.2. Analyzing design hierarchy..
+Top module:  \axi_apb_bridge
+Removed 0 unused modules.
+
+43. Printing statistics.
+
+=== axi_apb_bridge ===
+
+   Number of wires:                112
+   Number of wire bits:            415
+   Number of public wires:          33
+   Number of public wire bits:     325
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                255
+     $_ANDNOT_                      21
+     $_AND_                          3
+     $_DFFE_PN0N_                   32
+     $_DFFE_PN0P_                  102
+     $_DFFE_PP_                     34
+     $_DFF_PN0_                      5
+     $_MUX_                         34
+     $_NAND_                         2
+     $_NOR_                          3
+     $_NOT_                          4
+     $_ORNOT_                        3
+     $_OR_                          12
+
+44. Executing CHECK pass (checking for obvious problems).
+Checking module axi_apb_bridge...
+Found and reported 0 problems.
+
+45. Generating Graphviz representation of design.
+Writing dot description to `/openlane/designs/axi_apb_bridge/runs/full_guide/tmp/synthesis/post_techmap.dot'.
+Dumping module axi_apb_bridge to page 1.
+
+46. Executing SHARE pass (SAT-based resource sharing).
+
+47. Executing OPT pass (performing simple optimizations).
+
+47.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+47.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+47.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \axi_apb_bridge..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+
+47.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \axi_apb_bridge.
+Performed a total of 0 changes.
+
+47.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\axi_apb_bridge'.
+Removed a total of 0 cells.
+
+47.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+47.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+47.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module axi_apb_bridge.
+
+47.9. Finished OPT passes. (There is nothing left to do.)
+
+48. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+
+49. Printing statistics.
+
+=== axi_apb_bridge ===
+
+   Number of wires:                112
+   Number of wire bits:            415
+   Number of public wires:          33
+   Number of public wire bits:     325
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                255
+     $_ANDNOT_                      21
+     $_AND_                          3
+     $_DFFE_PN0N_                   32
+     $_DFFE_PN0P_                  102
+     $_DFFE_PP_                     34
+     $_DFF_PN0_                      5
+     $_MUX_                         34
+     $_NAND_                         2
+     $_NOR_                          3
+     $_NOT_                          4
+     $_ORNOT_                        3
+     $_OR_                          12
+
+mapping tbuf
+
+50. Executing TECHMAP pass (map to technology primitives).
+
+50.1. Executing Verilog-2005 frontend: /home/running_courses/EE671/EE671_3/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v
+Parsing Verilog input from `/home/running_courses/EE671/EE671_3/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/tribuff_map.v' to AST representation.
+Generating RTLIL representation for module `\$_TBUF_'.
+Successfully finished Verilog frontend.
+
+50.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~3 debug messages>
+
+51. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+52. Executing TECHMAP pass (map to technology primitives).
+
+52.1. Executing Verilog-2005 frontend: /home/running_courses/EE671/EE671_3/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v
+Parsing Verilog input from `/home/running_courses/EE671/EE671_3/.volare/sky130A/libs.tech/openlane/sky130_fd_sc_hd/latch_map.v' to AST representation.
+Generating RTLIL representation for module `\$_DLATCH_P_'.
+Generating RTLIL representation for module `\$_DLATCH_N_'.
+Successfully finished Verilog frontend.
+
+52.2. Continuing TECHMAP pass.
+No more expansions possible.
+<suppressed ~4 debug messages>
+
+53. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+54. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_2 (noninv, pins=3, area=21.27) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__dfbbn_2 (noninv, pins=6, area=35.03) is a direct match for cell type $_DFFSR_NNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_2 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    unmapped dff cell: $_DFF_NN0_
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_2 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    \sky130_fd_sc_hd__dfbbn_2 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    unmapped dff cell: $_DFFSR_PNN_
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+54.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+Mapping DFF cells in module `\axi_apb_bridge':
+  mapped 139 $_DFF_PN0_ cells to \sky130_fd_sc_hd__dfrtp_2 cells.
+  mapped 34 $_DFF_P_ cells to \sky130_fd_sc_hd__dfxtp_2 cells.
+
+55. Printing statistics.
+
+=== axi_apb_bridge ===
+
+   Number of wires:                280
+   Number of wire bits:            583
+   Number of public wires:          33
+   Number of public wire bits:     325
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                423
+     $_ANDNOT_                      21
+     $_AND_                          3
+     $_MUX_                        202
+     $_NAND_                         2
+     $_NOR_                          3
+     $_NOT_                          4
+     $_ORNOT_                        3
+     $_OR_                          12
+     sky130_fd_sc_hd__dfrtp_2      139
+     sky130_fd_sc_hd__dfxtp_2       34
+
+[INFO]: USING STRATEGY AREA 0
+
+56. Executing ABC pass (technology mapping using ABC).
+
+56.1. Extracting gate netlist of module `\axi_apb_bridge' to `/tmp/yosys-abc-nkSf7e/input.blif'..
+Extracted 250 gates and 554 wires to a netlist network with 304 inputs and 173 outputs.
+
+56.1.1. Executing ABC.
+Running ABC command: "/nix/store/wq2q0njg3sx8wvj2akz7x1qxwyrv9xlr-yosys-abc/bin/abc" -s -f /tmp/yosys-abc-nkSf7e/abc.script 2>&1
+ABC: ABC command line: "source /tmp/yosys-abc-nkSf7e/abc.script".
+ABC: 
+ABC: + read_blif /tmp/yosys-abc-nkSf7e/input.blif 
+ABC: + read_lib -w /openlane/designs/axi_apb_bridge/runs/full_guide/tmp/synthesis/trimmed.lib 
+ABC: Parsing finished successfully.  Parsing time =     0.06 sec
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfbbn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfrtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfsbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfstp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxbp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dfxtp_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_1".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_2".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtn_4".
+ABC: Scl_LibertyReadGenlib() skipped sequential cell "sky130_fd_sc_hd__dlxtp_1".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_2".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_4".
+ABC: Scl_LibertyReadGenlib() skipped three-state cell "sky130_fd_sc_hd__ebufn_8".
+ABC: Library "sky130A_merged" from "/openlane/designs/axi_apb_bridge/runs/full_guide/tmp/synthesis/trimmed.lib" has 175 cells (17 skipped: 14 seq; 3 tri-state; 0 no func; 0 dont_use).  Time =     0.08 sec
+ABC: Memory =    9.54 MB. Time =     0.08 sec
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+ABC: + read_constr -v /openlane/designs/axi_apb_bridge/runs/full_guide/tmp/synthesis/synthesis.sdc 
+ABC: Setting driving cell to be "sky130_fd_sc_hd__inv_2".
+ABC: Setting output load to be 33.442001.
+ABC: + read_constr /openlane/designs/axi_apb_bridge/runs/full_guide/tmp/synthesis/synthesis.sdc 
+ABC: + fx 
+ABC: + mfs 
+ABC: + strash 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + retime -D -D 12000 -M 5 
+ABC: + scleanup 
+ABC: Error: The network is combinational.
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drf -l 
+ABC: + balance 
+ABC: + drw -l 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + drf -l -z 
+ABC: + drw -l -z 
+ABC: + balance 
+ABC: + fraig_store 
+ABC: + fraig_restore 
+ABC: + amap -m -Q 0.1 -F 20 -A 20 -C 5000 
+ABC: + retime -D -D 12000 
+ABC: + &get -n 
+ABC: + &st 
+ABC: + &dch 
+ABC: + &nf 
+ABC: + &put 
+ABC: + buffer -N 10 -S 750.0 
+ABC: + upsize -D 12000 
+ABC: Current delay (1781.52 ps) does not exceed the target delay (12000.00 ps). Upsizing is not performed.
+ABC: + dnsize -D 12000 
+ABC: + stime -p 
+ABC: WireLoad = "none"  Gates =    418 ( 45.7 %)   Cap = 10.7 ff ( 11.3 %)   Area =     3189.31 ( 54.3 %)   Delay =  2265.61 ps  ( 10.0 %)               
+ABC: Path  0 --       2 : 0    2 pi                       A =   0.00  Df =  13.7   -8.1 ps  S =  24.8 ps  Cin =  0.0 ff  Cout =   3.8 ff  Cmax =   0.0 ff  G =    0  
+ABC: Path  1 --     479 : 1   10 sky130_fd_sc_hd__buf_1   A =   3.75  Df = 237.1  -84.0 ps  S = 262.8 ps  Cin =  2.1 ff  Cout =  21.8 ff  Cmax = 130.0 ff  G =  991  
+ABC: Path  2 --     483 : 3    1 sky130_fd_sc_hd__or3b_2  A =   8.76  Df = 626.5 -222.2 ps  S =  72.3 ps  Cin =  1.5 ff  Cout =   2.2 ff  Cmax = 269.2 ff  G =  139  
+ABC: Path  3 --     484 : 1    8 sky130_fd_sc_hd__buf_1   A =   3.75  Df = 805.3 -166.7 ps  S = 274.0 ps  Cin =  2.1 ff  Cout =  22.8 ff  Cmax = 130.0 ff  G = 1040  
+ABC: Path  4 --     487 : 2    8 sky130_fd_sc_hd__nand2_2 A =   6.26  Df = 954.8 -167.4 ps  S = 128.8 ps  Cin =  4.4 ff  Cout =  21.6 ff  Cmax = 295.7 ff  G =  467  
+ABC: Path  5 --     488 : 1   10 sky130_fd_sc_hd__buf_1   A =   3.75  Df =1524.5 -375.7 ps  S = 722.2 ps  Cin =  2.1 ff  Cout =  61.8 ff  Cmax = 130.0 ff  G = 2883  
+ABC: Path  6 --     594 : 3    1 sky130_fd_sc_hd__mux2_2  A =  11.26  Df =1942.3 -411.0 ps  S =  46.0 ps  Cin =  2.3 ff  Cout =   2.2 ff  Cmax = 297.6 ff  G =   92  
+ABC: Path  7 --     595 : 1    1 sky130_fd_sc_hd__buf_1   A =   3.75  Df =2265.6 -515.2 ps  S = 396.8 ps  Cin =  2.1 ff  Cout =  33.4 ff  Cmax = 130.0 ff  G = 1590  
+ABC: Start-point = pi1 (\current_state [2]).  End-point = po44 ($auto$rtlil.cc:2684:MuxGate$962).
+ABC: + print_stats -m 
+ABC: netlist                       : i/o =  304/  173  lat =    0  nd =   418  edge =    866  area =3188.52  delay = 7.00  lev = 7
+ABC: + write_blif /tmp/yosys-abc-nkSf7e/output.blif 
+
+56.1.2. Re-integrating ABC results.
+ABC RESULTS:   sky130_fd_sc_hd__nor3_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__inv_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__nor3b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4bb_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or4bb_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__o221a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21bai_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nand2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__or3b_2 cells:        5
+ABC RESULTS:   sky130_fd_sc_hd__a22o_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__or2_2 cells:        3
+ABC RESULTS:   sky130_fd_sc_hd__o21ba_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__and4b_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__nor2_2 cells:        4
+ABC RESULTS:   sky130_fd_sc_hd__a21o_2 cells:        2
+ABC RESULTS:   sky130_fd_sc_hd__o21a_2 cells:        1
+ABC RESULTS:   sky130_fd_sc_hd__mux2_2 cells:      196
+ABC RESULTS:   sky130_fd_sc_hd__buf_1 cells:      188
+ABC RESULTS:        internal signals:       77
+ABC RESULTS:           input signals:      304
+ABC RESULTS:          output signals:      173
+Removing temp directory.
+
+57. Executing SETUNDEF pass (replace undef values with defined constants).
+
+58. Executing HILOMAP pass (mapping to constant drivers).
+
+59. Executing SPLITNETS pass (splitting up multi-bit signals).
+
+60. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \axi_apb_bridge..
+Removed 5 unused cells and 572 unused wires.
+<suppressed ~9 debug messages>
+
+61. Executing INSBUF pass (insert buffer cells for connected wires).
+
+62. Executing CHECK pass (checking for obvious problems).
+Checking module axi_apb_bridge...
+Found and reported 0 problems.
+
+63. Printing statistics.
+
+=== axi_apb_bridge ===
+
+   Number of wires:                514
+   Number of wire bits:            740
+   Number of public wires:          96
+   Number of public wire bits:     322
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                593
+     sky130_fd_sc_hd__a21o_2         2
+     sky130_fd_sc_hd__a22o_2         1
+     sky130_fd_sc_hd__and2_2         3
+     sky130_fd_sc_hd__and4b_2        1
+     sky130_fd_sc_hd__and4bb_2       1
+     sky130_fd_sc_hd__buf_1        188
+     sky130_fd_sc_hd__conb_1         2
+     sky130_fd_sc_hd__dfrtp_2      139
+     sky130_fd_sc_hd__dfxtp_2       34
+     sky130_fd_sc_hd__inv_2          3
+     sky130_fd_sc_hd__mux2_2       196
+     sky130_fd_sc_hd__nand2_2        3
+     sky130_fd_sc_hd__nor2_2         4
+     sky130_fd_sc_hd__nor3_2         1
+     sky130_fd_sc_hd__nor3b_2        1
+     sky130_fd_sc_hd__o21a_2         1
+     sky130_fd_sc_hd__o21ba_2        1
+     sky130_fd_sc_hd__o21bai_2       1
+     sky130_fd_sc_hd__o221a_2        1
+     sky130_fd_sc_hd__or2_2          3
+     sky130_fd_sc_hd__or3b_2         5
+     sky130_fd_sc_hd__or4_2          1
+     sky130_fd_sc_hd__or4bb_2        1
+
+   Chip area for module '\axi_apb_bridge': 7572.262400
+
+64. Executing Verilog backend.
+Dumping module `\axi_apb_bridge'.
+
+65. Executing JSON backend.
+
+End of script. Logfile hash: 709b311f41, CPU: user 0.59s system 0.02s, MEM: 36.34 MB peak
+Yosys 0.38 (git sha1 543faed9c8c, clang++ 17.0.6 -fPIC -Os)
+Time spent: 38% 2x abc (0 sec), 13% 1x dfflibmap (0 sec), ...
