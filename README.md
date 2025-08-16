@@ -5,4 +5,4 @@ decoding, data conversion, and control logic to manage communication between the
 Verification is carried out using a testbench, which simulates AXI transactions and checks if the bridge 
 correctly handles read/write operations and synchronization. Once verified, we have done RTL-to-GDS 
 flow, including Synthesis, Floorplan, Placement, Clock Tree Synthesis (CTS), Routing, Parasitics STA 
-and DRC LVS checks to generate a GDSII file. ****
+and DRC LVS checks to generate a GDSII file. 
